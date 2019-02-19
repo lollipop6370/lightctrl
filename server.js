@@ -26,7 +26,7 @@ app.post('/webhook', function (req, res) {
     thisQs.light_id = "main";
     request({
         //uri: "https://sheetdb.io/api/v1/" + SHEETDB_PRODUCTINFO_ID + "/light_id/main",
-        uri: "https://sheetdb.io/api/v1/rqb9bz3aeg2qf/light_id/main",
+        url: "https://sheetdb.io/api/v1/rqb9bz3aeg2qf/light_id/main",
         json: true,
         method: "PUT",
         headers: { "Content-Type": "application/json" },
