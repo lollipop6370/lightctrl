@@ -19,7 +19,7 @@ app.post('/webhook', function (req, res) {
     let lightStatus = data.queryResult.parameters["light_state"];
 
     var thisQs = {};
-    thisQs.light_switch = lightStatus;
+    thisQs.light_switch = "123";
     thisQs.light_id = "main";
     request({
         //uri: "https://sheetdb.io/api/v1/" + SHEETDB_PRODUCTINFO_ID + "/light_id/main",
