@@ -30,9 +30,11 @@ app.post('/webhook', function (req, res) {
     }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log("[SheetDB API] Success!");
+            sendCards(body, res, true);
         }
         else {
             console.log("[SheetDB API] Failed.");
+            sendCards(body, res, false);
         }
     })
 
@@ -50,10 +52,10 @@ function sendCards(body, res, status) {
     var updateTextObject = {};
     var finalResponseText = "";
     if (status) {
-        finalResponseText = "§ó·s§¹¦¨";
+        finalResponseText = "Â§Ã³Â·sÂ§Â¹Â¦Â¨";
     }
     else {
-        finalResponseText = "§ó·s¥¢±Ñ";
+        finalResponseText = "Â§Ã³Â·sÂ¥Â¢Â±Ã‘";
     }
     updateTextObject.text = { text: [finalResponseText] };
     thisFulfillmentMessages.push(updateTextObject);
