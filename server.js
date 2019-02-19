@@ -16,10 +16,10 @@ const SHEETDB_PRODUCTINFO_ID = config.get('productinfo_id');
 app.post('/webhook', function (req, res) {
     console.log("[WebHook In]");
     let data = req.body;
-    let lightStatus = data.queryResult.parameters["light_state"];
+    var lightStatus = data.queryResult.parameters["light_state"];
 
     var thisQs = {};
-    thisQs.light_switch = "123";
+    thisQs.light_switch = lightStatus;
     thisQs.light_id = "main";
     request({
         //uri: "https://sheetdb.io/api/v1/" + SHEETDB_PRODUCTINFO_ID + "/light_id/main",
@@ -56,7 +56,7 @@ function sendCards(body, res, status) {
         finalResponseText = "更新成功";
     }
     else {
-        finalResponseText = "更新失敗";
+        finalResponseText = lightStatus;
     }
     updateTextObject.text = { text: [finalResponseText] };
     thisFulfillmentMessages.push(updateTextObject);
