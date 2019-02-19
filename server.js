@@ -56,7 +56,7 @@ function sendCards(body, res, status) {
         finalResponseText = "更新成功";
     }
     else {
-        finalResponseText = lightStatus;
+        finalResponseText = "更新失敗";
     }
     updateTextObject.text = { text: [finalResponseText] };
     thisFulfillmentMessages.push(updateTextObject);
