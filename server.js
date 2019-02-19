@@ -18,7 +18,7 @@ app.post('/webhook', function (req, res) {
     let data = req.body;
     let lightStatus = data.queryResult.parameters["light_state"];
 
-    va thisQs = {};
+    var thisQs = {};
     thisQs.light_switch = lightStatus;
     thisQs.light_id = "main";
     request({
@@ -50,10 +50,10 @@ function sendCards(body, res, status) {
     var updateTextObject = {};
     var finalResponseText = "";
     if (status) {
-        finalResponseText = "Â§Ã³Â·sÂ§Â¹Â¦Â¨";
+        finalResponseText = "§ó·s§¹¦¨";
     }
     else {
-        finalResponseText = "Â§Ã³Â·sÂ¥Â¢Â±Ã‘";
+        finalResponseText = "§ó·s¥¢±Ñ";
     }
     updateTextObject.text = { text: [finalResponseText] };
     thisFulfillmentMessages.push(updateTextObject);
