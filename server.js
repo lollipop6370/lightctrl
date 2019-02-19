@@ -16,7 +16,7 @@ const SHEETDB_PRODUCTINFO_ID = config.get('productinfo_id');
 app.post('/webhook', function (req, res) {
     console.log("[WebHook In]");
     let data = req.body;
-    var lightStatus = data.queryResult.parameters["light_state"];
+    let lightStatus = data.queryResult.parameters["light_state"];
 
     var thisQs = {};
     thisQs.light_switch = lightStatus;
