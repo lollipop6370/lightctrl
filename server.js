@@ -34,7 +34,7 @@ app.post('/webhook', function (req, res) {
         }
         else {
             console.log("[SheetDB API] Failed.");
-            sendCards(body, res, false);
+            sendCards(null, res, false);
         }
     })
 
