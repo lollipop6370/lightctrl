@@ -52,10 +52,10 @@ function sendCards(body, res, status) {
     var updateTextObject = {};
     var finalResponseText = "";
     if (status) {
-        finalResponseText = "§ó·s§¹¦¨";
+        finalResponseText = "更新成功";
     }
     else {
-        finalResponseText = "§ó·s¥¢±Ñ";
+        finalResponseText = "更新失敗";
     }
     updateTextObject.text = { text: [finalResponseText] };
     thisFulfillmentMessages.push(updateTextObject);
