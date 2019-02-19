@@ -10,6 +10,7 @@ var port = process.env.PORT || process.env.port || 5000;
 app.set('port', port);
 app.use(bodyParser.json());
 
+var test1;
 
 const SHEETDB_PRODUCTINFO_ID = config.get('productinfo_id');
 
@@ -18,6 +19,8 @@ app.post('/webhook', function (req, res) {
     let data = req.body;
     let lightStatus = data.queryResult.parameters["light_state"];
 
+    test1=lightStatus;
+    
     var thisQs = {};
     thisQs.light_switch = lightStatus;
     thisQs.light_id = "main";
@@ -58,7 +61,7 @@ function sendCards(body, res, status) {
     else {
         finalResponseText = "更新失敗";
     }
-    updateTextObject.text = { text: [finalResponseText] };
+    updateTextObject.text = { text: [test1] };
     thisFulfillmentMessages.push(updateTextObject);
     var responseObject = {
         fulfillmentMessages: thisFulfillmentMessages
